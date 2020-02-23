@@ -1,7 +1,12 @@
 # TransipDNSToTable
 
 ## TL;DR
-Create a bookmark [containing this piece of javascript](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/bookmark-content.txt) and transform the DNS Entries in your controlpanel to a beautifull old school html table. Then copy and paste to another program!
+Create a bookmark in your webbrowser with one of these pieces of javascript to transform the DNS Entries of a domain in your TransIP control panel to:
+* [CSV text](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/to-csv.txt)
+* [Html table](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/to-table.txt)
+* [XML](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/to-xml.txt)
+
+Then copy and paste the converted data to another program!
 
 ## Explanation
 In the TransIP dashboard, the DNS entries of your domains are easy to edit,
@@ -32,17 +37,42 @@ The table of DNS entries consists of div elements containing input and select el
 	</div>
     </div>
 
-This looks nice when displayed by the browser, but is terrible to copy to an spreadsheet program or most other programs that handle tables well.
+This looks nice when displayed by the browser, but is terrible to copy to an spreadsheet program or most other programs that handle tables, csv or xml well.
 
-Therefore I wrote [this piece of javascript](bookmark-content.txt) that can be added as bookmark in Google Chrome, Firefox, etc by adding a bookmark with the contents of the file `bookmark-content.txt`.
-A human readable version is [located in the src directory](https://github.com/LeoZandvliet/TransipDNSToTable/blob/master/src/bookmark-content.txt).
+Therefore I wrote several pieces of javascript that can be added as bookmark in Google Chrome, Firefox, Safari, etc to quickly convert the DNS entries to:
+* [CSV text](to-csv.txt)
+* [Html table](to-table.txt)
+* [XML](to-xml.txt)
 
-Then the divs are replace with an old school tabel like so, which is easy to be copied and pasted into other applications:
+Human readable versions are located in the [src directory](https://github.com/LeoZandvliet/TransipDNSToTable/blob/master/src/).
+
+## Example output
+
+### CSV
+
+```
+name;TTL;Type;Value
+@;1 Dag;A;123.456.789.1
+```
+
+### Table 
 
 | name | TTL | Type | Value |
 | --- | --- | --- | --- |
 | @	| 1 Dag | A | 123.456.789.1 |
 
+### XML
+
+```
+<dnsEntries>
+	<dnsEntry>
+		<name>*</name>
+		<ttl>1 Dag</ttl>
+		<type>CNAME</type>
+		<value>123.456.789.0</value>
+	</dnsEntry>
+</dnsEntries>
+```
 
 ## Script breakdown
 1. Add jQuery to the page
