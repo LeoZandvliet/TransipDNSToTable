@@ -44,27 +44,27 @@
 	}
 
     loadScript("https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", function () {
-		lastEntry = jQuery('#dnsEntries > .form-panels > .form-panel').last().find('input[name="name[]"]');
-		if(lastEntry.length > 0 && lastEntry.val()==''){ jQuery('#dnsEntries > .form-panels > .form-panel').last().remove() }
+	lastEntry = jQuery('#dnsEntries > .form-panels > .form-panel').last().find('input[name="name[]"]');
+	if(lastEntry.length > 0 && lastEntry.val()==''){ jQuery('#dnsEntries > .form-panels > .form-panel').last().remove() }
 
-    var xml = '';
-		jQuery('#dnsEntries .form-group').each(function(){
-			var entry = '<dnsEntry>';
-			jQuery(this).find('input, select').each(function(){
-				var inputName = nodeName(jQuery(this));
-				var text = '';
-				if(jQuery(this).prop('tagName')==='SELECT'){
-					text=txt(jQuery(this).find('option:selected'));
-				}
-				else{
-					text=txt(jQuery(this));
-				}
-				entry += '<'+inputName+'>'+text+'</'+inputName+'>';
-			});
-			entry += '</dnsEntry>';
-			xml += entry;
+    	var xml = '';
+	jQuery('#dnsEntries .form-group').each(function(){
+		var entry = '<dnsEntry>';
+		jQuery(this).find('input, select').each(function(){
+			var inputName = nodeName(jQuery(this));
+			var text = '';
+			if(jQuery(this).prop('tagName')==='SELECT'){
+				text=txt(jQuery(this).find('option:selected'));
+			}
+			else{
+				text=txt(jQuery(this));
+			}
+			entry += '<'+inputName+'>'+text+'</'+inputName+'>';
 		});
-		xml = '<dnsEntries>'+xml+'</dnsEntries>';
-		jQuery('form.dns').html(jQuery('<div />').text(xml).html());
+		entry += '</dnsEntry>';
+		xml += entry;
+	});
+	xml = '<dnsEntries>'+xml+'</dnsEntries>';
+	jQuery('form.dns').html(jQuery('<div />').text(xml).html());
     });
 })();
