@@ -36,6 +36,6 @@ Script breakdown:
 1. Add jQuery to the page
 2. Create a funtion txt() to retrieve the displayed texts from input or option label
 3. Callback when jQuery is loaded:
-  1. Iterate over the several `.form-group` to transform to table cells in a table row
-  2. Inject the 'table' into the DOM and replace the html of `form.dns`.
+   1. Iterate over the several `.form-group` to transform to table cells in a table row
+   2. Inject the 'table' into the DOM and replace the html of `form.dns`.
 4. The html can then be copied and pasted by the user's wishes.
