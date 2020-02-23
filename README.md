@@ -35,7 +35,7 @@ The table of DNS entries consists of div elements containing input and select el
 This looks nice when displayed by the browser, but is terrible to copy to an spreadsheet program or most other programs that handle tables well.
 
 Therefore I wrote [this piece of javascript](bookmark-content.txt) that can be added as bookmark in Google Chrome, Firefox, etc by adding a bookmark with the contents of the file `bookmark-content.txt`.
-A human readable version is (located in the src directory)[https://github.com/LeoZandvliet/TransipDNSToTable/blob/master/src/bookmark-content.txt].
+A human readable version is [located in the src directory](https://github.com/LeoZandvliet/TransipDNSToTable/blob/master/src/bookmark-content.txt).
 
 Then the divs are replace with an old school tabel like so, which is easy to be copied and pasted into other applications:
 
