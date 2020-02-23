@@ -35,6 +35,9 @@
     }
 
     loadScript("https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", function () {
+    	lastEntry = jQuery('#dnsEntries > .form-panels > .form-panel').last().find('input[name="name[]"]');
+	if(lastEntry.length > 0 && lastEntry.val()==''){ jQuery('#dnsEntries > .form-panels > .form-panel').last().remove() }
+
         var tbl = '<table style="width:100%;"><thead><th>name</th><th>ttl</th><th>type</th><th>value</th></thead>';
         var rows = '';
         jQuery('#dnsEntries .form-group').each(function(){
