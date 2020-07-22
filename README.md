@@ -5,6 +5,7 @@ Create a bookmark in your webbrowser with one of these pieces of javascript to t
 * [CSV text](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/to-csv.txt)
 * [Html table](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/to-table.txt)
 * [XML](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/to-xml.txt)
+* [RFC-1053](to-rfc1053.txt)
 
 Then copy and paste the converted data to another program!
 
