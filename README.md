@@ -5,6 +5,7 @@ Create a bookmark in your webbrowser with one of these pieces of javascript to t
 * [CSV text](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/to-csv.txt)
 * [Html table](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/to-table.txt)
 * [XML](https://raw.githubusercontent.com/LeoZandvliet/TransipDNSToTable/master/to-xml.txt)
+* [RFC-1053](to-rfc1053.txt)
 
 Then copy and paste the converted data to another program!
 
@@ -40,9 +41,13 @@ The table of DNS entries consists of div elements containing input and select el
 This looks nice when displayed by the browser, but is terrible to copy to an spreadsheet program or most other programs that handle tables, csv or xml well.
 
 Therefore I wrote several pieces of javascript that can be added as bookmark in Google Chrome, Firefox, Safari, etc to quickly convert the DNS entries to:
+
 * [CSV text](to-csv.txt)
 * [Html table](to-table.txt)
 * [XML](to-xml.txt)
+* [RFC-1053](to-rfc1053.txt)
+
+**NOTE**: The RFC-1053 format can be used to import your records into a AWS Route 53 hosted zone.
 
 Human readable versions are located in the [src directory](https://github.com/LeoZandvliet/TransipDNSToTable/blob/master/src/).
 
@@ -72,6 +77,15 @@ name;TTL;Type;Value
 		<value>123.456.789.0</value>
 	</dnsEntry>
 </dnsEntries>
+```
+
+### RFC-1053
+
+See [https://tools.ietf.org/html/rfc1035](https://tools.ietf.org/html/rfc1035).
+
+```
+$ORIGIN <DOMAIN>.
+@ 1D IN A 123.456.789.1
 ```
 
 ## Script breakdown
